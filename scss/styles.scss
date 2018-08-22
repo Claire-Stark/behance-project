@@ -1,12 +1,113 @@
-$primaryColor: blue;
-$secondaryColor: purple;
+$primaryColor: rgb(200, 162, 200);
+$secondaryColor: rgb(107, 162, 162);
+$mainFont: 'Quicksand', sans-serif;
+
+body{
+	font-family: $mainFont;
+}
 
 .container {
 	color: $primaryColor;
-	border: 1px red solid;
 	display: flex;
+	flex-wrap: wrap;
 
-	.left,.right{
-		border:1px gray solid;
+	.top{
+		flex: 1 0 90%;
+		background-image: url('../assets/background.jpg');
+		background-size: cover;
+    	background-position: center;
+    	height: 50vh;
+	}
+
+	.name {
+		flex: 1 0 auto;
+		margin-top: 0.5em;
+		font-size: 3em;
+		text-align: center;
+		border-top: thin $secondaryColor solid;
+		border-bottom: thin $secondaryColor solid;
+	}
+
+	.about{
+		display: flex;
+		margin-top: 1em;
+	}
+
+	.blurb {
+		flex: 1 0 49%;
+		padding: 0.5em;
+		border-right: thin $secondaryColor solid;
+		box-sizing: border-box;
+		line-height: 1.5em;
+		font-size: 1.15em;
+	}
+
+	.contact {
+		flex: 1 0 49%;
+		padding: 0.5em;
+		box-sizing: border-box;
+	}
+
+	.projects {
+		margin-top: 1em;
+		border-top: thin $secondaryColor solid;
+		text-align: center;
+		width: 100vw;
+
+		h1 {
+			font-size: 3em;
+		}
+	}
+
+	.project-thumbs{
+		list-style-type: none;
+		display:flex;
+		flex-wrap:wrap;
+
+	}
+
+	.project-thumbs li{
+		flex: 1 0 20%;
+		margin: 0.5em;
+		border: 1px #ccc solid;
+		padding: 0.5em;
+		box-sizing: border-box;
+		
+	}
+
+	.project-thumbs li a {
+		color: $secondaryColor;
+	}
+
+	.project-thumbs img{
+		display:block;
+		width: 100%;
+
+	}
+
+
+}
+
+.project-container {
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	color: $primaryColor;
+
+	img {
+		width: 100%;
+		// height: 100%;
+	}
+
+	h3{
+		color: $secondaryColor;
 	}
 }
+
+
+
+
+
+
+
+
