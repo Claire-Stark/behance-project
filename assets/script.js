@@ -73,22 +73,22 @@ $(function(){
 
 		});
 
-		let urlProjectComments = 'https://api.behance.net/v2/projects/'+id+'/comments?client_id='+id;
+		let urlProjectComments = 'https://api.behance.net/v2/projects/'+id+'/comments?client_id='+key;
 
 		$.ajax({
 			url:urlProjectComments,
 			dataType:'jsonp',
 			success:function(res){
 				console.log(res);
-				let project = res.project;
+				let comments = res.comments;
 
-				// $('<h1>'+project.name+'</h1>').appendTo('.project-container')
-				// $('<p>'+project.description+'</p>').appendTo('.project-container')
-				// $('<h3>'+moment.unix(project.published_on).fromNow()+'</h3>').appendTo('.project-container')
-				//  when you want to create a date you will utilise moment.unix, you will put your project.published_on inbetween the brackets to know what unit to transform into a date 
-				// /* fromNow will give you how many days/months/years ago that date was that you created using unix. */
-				// $('<img src="'+project.covers.original+'" alt="">').appendTo('.project-container')
+				console.log(comments)
 
+				_(comments).each(function(item){
+					$('<li>'+item.comment+'</li>').appendTo('.comments-container')
+				})
+
+				
 			}
 
 		});
